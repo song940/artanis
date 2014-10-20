@@ -1,0 +1,27 @@
+{
+  "name": "artanis",
+  "version": "1.0.1",
+  "description": "web framework for nodejs like sinatra ",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/song940/artanis.git"
+  },
+  "keywords": [
+    "web",
+    "framework",
+    "sinatra"
+  ],
+  "author": "lsong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/song940/artanis/issues"
+  },
+  "homepage": "https://github.com/song940/artanis"
+}
