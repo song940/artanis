@@ -11,7 +11,7 @@ global.config = function(key, value){
 	config[ key ] = value;
 };
 
-['get', 'post', 'delete', 'update'].forEach(function(method){
+;['get', 'post', 'delete', 'update'].forEach(function(method){
 	global[ method ] = function(route, handler){
 		routes.push({ 
 			route		: new RegExp("^" + route + "$"),
@@ -22,16 +22,24 @@ global.config = function(key, value){
 });
 
 var server = http.createServer(function (req, res) {
-	//console.log( req.method, req.url );
 	routes.forEach(function(route){
 		if(route.method == req.method && route.route.test(req.url) ){
 			var result = route.handler(req, res);
-			if(result){
-				res.end(result);
-			}
+			if(result) res.end(result);
+		}else{
+			res.end('Not Found');
 		}
 	});
-}).listen(config.port, config.ip, function(){
-	console.log('server is running at %s', server.address().port);
 });
 
+global.close = function(){
+	server.close();
+};
+
+global.start = function(){
+	server.listen(config.port, config.ip, function(){
+		console.log('server is running at %s', server.address().port);
+	});
+};
+
+start()

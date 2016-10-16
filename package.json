@@ -1,13 +1,10 @@
 {
   "name": "artanis",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "web framework for nodejs like sinatra ",
   "main": "index.js",
   "directories": {
     "test": "test"
-  },
-  "scripts": {
-    "test": "node test/test.js"
   },
   "repository": {
     "type": "git",

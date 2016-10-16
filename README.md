@@ -12,9 +12,14 @@ $ npm install artanis --save
 ````javascript
 require('artanis');
 
-get('/hi', function(){
-  return "Hello World!";
-});
+config('port', 4000)
+
+get('/hi', () => "hello world!")
+
+get('/', (req, res) => {
+  
+  res.send('ok');
+})
 
 ````
 
@@ -50,5 +55,3 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 ---
-![docor](https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/doctor.png)
-built upon love by [docor](https://github.com/turingou/docor.git) v0.1.3
